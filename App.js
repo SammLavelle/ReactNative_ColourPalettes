@@ -9,12 +9,12 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Home" }}
+          name="ColorPalette"
+          component={ColorPalette}
+          options={({ route }) => ({ title: route.params.roomName })}
         />
-        <Stack.Screen name="ColorPalette" component={ColorPalette} />
       </Stack.Navigator>
     </NavigationContainer>
   );

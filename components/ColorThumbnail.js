@@ -8,8 +8,8 @@ const ColorThumbnail = ({ colorCode }) => {
 
 const styles = StyleSheet.create({
   thumbnail: {
-    height: 50,
     width: 50,
+    aspectRatio: "1/1",
   },
 });
 export default ColorThumbnail;

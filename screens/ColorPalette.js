@@ -6,10 +6,9 @@ const ColorPalette = ({ route }) => {
   const roomName = route.params.roomName;
   return (
     <View style={[styles.container]}>
-      <Text style={[styles.title]}>{roomName}</Text>
       <FlatList
         data={rooms.find((room) => room.name === roomName).colors}
-        keyExtractor={(item) => item}
+        keyExtractor={(item) => item.index}
         renderItem={({ item }) => <ColorBox colorCode={item.hexCode} />}
       />
     </View>
@@ -24,11 +23,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     gap: 10,
     flex: 1,
-  },
-  title: {
-    textTransform: "capitalize",
-    textAlign: "center",
-    fontSize: 24,
-    marginBottom: 10,
   },
 });
